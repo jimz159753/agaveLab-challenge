@@ -1,26 +1,21 @@
 var express = require('express'),
 	app = express(),
-	bodyParser = require('body-parser')
+	bodyParser = require('body-parser'),
+	passport = require('passport'),
+    LocalStrategy = require('passport-local').Strategy;
 
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('store', 'postgres', '12345678', {
-  dialect: 'postgres'
-})
-
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
+const sequelize = require('./config-sequelize');
+/* MODELS */
+const model_prod = require('./models/product');
+const model_usr = require('./models/user');
+const products = model_prod(sequelize);
+const users = model_usr(sequelize);
+ 	
 var shop = [];
 var count_prod = {};
 
-const products = sequelize.define('products', {
-  code: Sequelize.STRING,
-  name: Sequelize.STRING,
-  price: Sequelize.STRING
 
-},{
-  timestamps: false
-})
 
 sequelize
   .authenticate()
@@ -31,7 +26,12 @@ sequelize
     console.error('Unable to connect to the database:', err);
   });
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(passport.initialize());
 
+
+/* PRODUCT OPERATIONS */
 app.get('/getAll', async (req, res) => {
 	
 	await products.findAll().then(product => {
@@ -104,7 +104,7 @@ app.post('/getProduct', async (req, res) => {
 		
 })
 
-app.use('/getPurchase', (req, res) => {
+app.get('/getPurchase', (req, res) => {
 	var r = 0;
 	
 	if (count_prod['PANTS']) {
@@ -143,12 +143,45 @@ app.use('/getPurchase', (req, res) => {
 	return res.end('Items: '+shop+'\nTotal: $'+String(r))
 })
 
+app.get('/getSuccessed', (req, res) => {
+	res.end('success')
+})
+
+app.get('/getFailed', (req, res) => {
+	res.end('failed')
+})
+/* PASSPORT */
+passport.use(new LocalStrategy({
+	usernameField: 'name',
+	passwordField: 'password'
+},
+	(username, password, done) => 
+	{
+		const user = users.findOne({ where :{ name: username }});
+    		
+      	return done(null, user);
+    	
+	}
+));
+
+passport.serializeUser(function(user, done) {
+  done(null, 'serialized!');
+});
+
+app.post('/',
+  passport.authenticate('local', { failureRedirect: '/getFailed' }),
+  (req, res) => {
+  	res.redirect('/getSuccessed');
+  }
+);
+
+
 sequelize
 	.sync()
 	.then(start);
 
 function start(){
-	var server = app.listen(3000, function(){
+	var server = app.listen(2000, function(){
 		console.log('listening on port', server.address().port);
 	})
 }
