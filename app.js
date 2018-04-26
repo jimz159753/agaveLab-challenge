@@ -99,7 +99,6 @@ app.post('/getProduct', async (req, res) => {
 		default:
 			console.log('Not found')
 	}
-	
 	return res.json(product)
 		
 })
@@ -176,12 +175,10 @@ app.post('/',
 );
 
 
-sequelize
-	.sync()
-	.then(start);
 
-function start(){
-	var server = app.listen(2000, function(){
-		console.log('listening on port', server.address().port);
-	})
-}
+
+var server = app.listen(2000, function(){
+	console.log('listening on port', server.address().port);
+})
+
+module.exports = server;
