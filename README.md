@@ -26,11 +26,11 @@ _Various departments have insisted on the following discounts:_
 
 _The checkout process allows for items to be scanned in any order, and should return the total amount to be paid._
 
-###Examples:
+<h4>Examples:</h4>
 
 
 Items: PANTS, TSHIRT, HAT
-Total: $32.50
+Total: $42.50
 
 Items: PANTS, TSHIRT, PANTS
 Total: $25.00
@@ -42,6 +42,6 @@ Items: PANTS, TSHIRT, PANTS, PANTS, HAT, TSHIRT, TSHIRT
 Total: $74.50
 
 
-####INSTRUCTIONS:
+<h4>INSTRUCTIONS:</h4>
 
 _Implement a basic API for our store._
