@@ -4,7 +4,7 @@
 
 
 **Testing:** Mocha, chai, sinon, superagent/axios, Requirements unit and functional/e2e test.<br/>  **API:** Express y passport.js (authentication is not required but is a plus).<br/>
-**Database:** Sequelize with Postgresql.
+**Database:** Sequelize with Postgresql.<br/>
 **Plus:** Docker setup.
 
 _We run a physical store which sells (only) 3 products:_
