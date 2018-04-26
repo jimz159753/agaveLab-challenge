@@ -3,7 +3,7 @@
 <h1 style="text-align: center;"> Agave Lab - Challenge </h1>
 
 
-**Testing:** Mocha, chai, sinon, superagent/axios, Requirements unit and functional/e2e test.<br/>  **API:** Express y passport.js (authentication is not required but is a plus).
+**Testing:** Mocha, chai, sinon, superagent/axios, Requirements unit and functional/e2e test.<br/>  **API:** Express y passport.js (authentication is not required but is a plus).<br/>
 **Database:** Sequelize with Postgresql.
 **Plus:** Docker setup.
 
