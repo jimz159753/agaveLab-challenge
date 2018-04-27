@@ -50,7 +50,7 @@ _Implement a basic API for our store._
 
 1. Install node modules
 ```
-	npm install
+    npm install
 ```
 2. Install postgresql
 ```
@@ -58,32 +58,32 @@ _Implement a basic API for our store._
 ```
 3. Import database
 ```
-	psql store > dump.sql
+    psql store > dump.sql
 ```
 
 4. Run server
 ```
-	npm start
+    npm start
 ```
 5. Make request to server
 ```
-	GET
+    GET
 
-	http://localhost:8080/getAll
+    http://localhost:8080/getAll
 
-	POST
+    POST
 		
-	http://localhost:8080/getProduct
+    http://localhost:8080/getProduct
 
-	[code = PANTS]
+    [code = PANTS]
 
-	GET
+    GET
 
-	http://localhost:8080/getPurchase
+    http://localhost:8080/getPurchase
 
-	POST
+    POST
 
-	http://localhost:8080/login
+    http://localhost:8080/login
 
-	[name = luis]
+    [name = luis]
 ```
