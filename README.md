@@ -45,3 +45,54 @@ Total: $74.50
 <h4>INSTRUCTIONS:</h4>
 
 _Implement a basic API for our store._
+
+<h4>IMPLEMENTATION:</h4>
+
+1. Install node modules
+```
+	npm install
+```
+2. Install postgresql
+```
+    sudo apt-get install postgresql postgresql-contrib
+```
+3. Import database
+```
+	psql store > dump.sql
+```
+
+4. Run server
+```
+	npm start
+```
+5. Make request to server
+```
+	GET 								POST 								GET 								POST
+
+	http://localhost:8080/getAll		http://localhost:8080/getProduct 	http://localhost:8080/getPurchase	http://localhost:8080/login
+
+										[code = PANTS]															[name = luis]
+
+	RESPONSE							RESPONSE							RESPONSE							RESPONSE
+
+	[									[									Items: HAT 							success
+    {									{									Total: $7.5
+        "id": 1,							"id": 1,
+        "code": "HAT",						"code": "HAT",
+        "name": "Hat",						"name": "Hat",
+        "price": 7.5						"price": 7.5
+    },									},
+    {									]
+        "id": 1,
+        "code": "PANTS",
+        "name": "Pants",
+        "price": 5
+    },
+    {
+        "id": 1,
+        "code": "TSHIRT",
+        "name": "T-Shirt",
+        "price": 20
+    }
+]
+```

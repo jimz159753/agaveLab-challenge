@@ -157,7 +157,7 @@ passport.use(new LocalStrategy({
 	(username, password, done) => 
 	{
 		const user = users.findOne({ where :{ name: username }});
-    		
+   		console.log(user) 		
       	return done(null, user);
     	
 	}
@@ -167,18 +167,16 @@ passport.serializeUser(function(user, done) {
   done(null, 'serialized!');
 });
 
-app.post('/',
+app.post('/login',
   passport.authenticate('local', { failureRedirect: '/getFailed' }),
   (req, res) => {
   	res.redirect('/getSuccessed');
   }
 );
 
-
-
-
 var server = app.listen(8080, function(){
 	console.log('listening on port', server.address().port);
 })
+
 
 module.exports = server;
