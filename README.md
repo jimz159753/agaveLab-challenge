@@ -72,7 +72,7 @@ _Implement a basic API for our store._
 	http://localhost:8080/getAll
 
 	POST
-																								
+		
 	http://localhost:8080/getProduct
 
 	[code = PANTS]
