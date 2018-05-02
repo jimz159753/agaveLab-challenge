@@ -88,4 +88,3 @@ _Implement a basic API for our store._
 
     [name = luis]
 ```
->>>>>>> e0e912ca9c63f3e7f7dc51f0f3944bcf0256b2ad
