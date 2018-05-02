@@ -168,7 +168,7 @@ passport.serializeUser(function(user, done) {
 });
 
 app.post('/login',
-  passport.authenticate('local', { failureRedirect: '/getFailed' }),
+  passport.authenticate('local', { failureRedirect: '/getFailed'}),
   (req, res) => {
   	res.redirect('/getSuccessed');
   }

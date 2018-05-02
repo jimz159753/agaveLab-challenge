@@ -67,32 +67,23 @@ _Implement a basic API for our store._
 ```
 5. Make request to server
 ```
-	GET 								POST 								GET 								POST
+	GET
 
-	http://localhost:8080/getAll		http://localhost:8080/getProduct 	http://localhost:8080/getPurchase	http://localhost:8080/login
+	http://localhost:8080/getAll
 
-										[code = PANTS]															[name = luis]
+	POST
+																								
+	http://localhost:8080/getProduct
 
-	RESPONSE							RESPONSE							RESPONSE							RESPONSE
+	[code = PANTS]
 
-	[									[									Items: HAT 							success
-    {									{									Total: $7.5
-        "id": 1,							"id": 1,
-        "code": "HAT",						"code": "HAT",
-        "name": "Hat",						"name": "Hat",
-        "price": 7.5						"price": 7.5
-    },									},
-    {									]
-        "id": 1,
-        "code": "PANTS",
-        "name": "Pants",
-        "price": 5
-    },
-    {
-        "id": 1,
-        "code": "TSHIRT",
-        "name": "T-Shirt",
-        "price": 20
-    }
-]
+	GET
+
+	http://localhost:8080/getPurchase
+
+	POST
+
+	http://localhost:8080/login
+
+	[name = luis]
 ```
