@@ -36,9 +36,8 @@ app.get('/getAll', async (req, res) => {
 	
 	await products.findAll().then(product => {
 
-		return res.json(product)
-		
-	})	
+		return res.json(product);	
+	})
 })
 
 app.post('/getProduct', async (req, res) => {
