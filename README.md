@@ -67,28 +67,7 @@ _Implement a basic API for our store._
 ```
 5. Make request to server
 ```
-<<<<<<< HEAD
-	GET
 
-	http://localhost:8080/getAll
-
-	POST
-																								
-	http://localhost:8080/getProduct
-
-	[code = PANTS]
-
-	GET
-
-	http://localhost:8080/getPurchase
-
-	POST
-
-	http://localhost:8080/login
-
-	[name = luis]
-```
-=======
     GET
 
     http://localhost:8080/getAll
